@@ -32,8 +32,9 @@ def searchByName(name):
 
 def searchByFamily(family):
   query = {"family": family}
-    for worker in collection_name.find(query):
+  for worker in collection_name.find(query):
     print(worker)
+
 
 def updateWorkerByPosition(name, family, newPosition):
   query = {
@@ -108,31 +109,18 @@ def init():
       updateWorkerBySalary(name, familyName, salary)
     elif(userInput == 'DEL'):
        print('Input name')
-      name = input()
-      print('Input family name')
-      familyName = input()
-      deleteWorker(name, familyName)
+       name = input()
+       print('Input family name')
+       familyName = input()
+       deleteWorker(name, familyName)
     elif(userInput == 'SORTN'):
       sortByName()
   
   init()
-
-
-
-
 
 CONNECTION_STRING = 'mongodb+srv://steli29:1QAZ2wsx@cluster0.jeppn.mongodb.net/test?authSource=admin&replicaSet=atlas-yglwae-shard-0&readPreference=primary&ssl=true'
 client = MongoClient(CONNECTION_STRING)
 mydb = client['SoftwareCompany']
 collection_name = mydb["Workers"]
 
-item_1 = {
-"_id" : "U1IT00001",
-"name" : "Cristopher",
-"family" : "Ivanov",
-"age" : 26,
-"salary" : 1500,
-"position" : "junior developer"
-}
-
-
+init()
