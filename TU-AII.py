@@ -66,7 +66,7 @@ def sortByName():
     print(worker)
 
 def init():
-  print("Hello, boss. This is your employees diary.")
+  print("Hello. You are using the employee's journal. Input a command to get started")
   print("Type ALL if you want to see all your employees")
   print("Type ADD if you want to add a new employee")
   print("Type SRCN if you want to search employee by name")
